@@ -1,0 +1,165 @@
+Tablas
+create table Cliente(
+CI_Cliente integer,
+Nombre varchar(30),
+Celular integer(8),
+Estado_Cliente boolean,
+Email varchar(40),
+primary key(CI_Cliente)
+);
+
+create table Nacionalidad(
+id_nacionalidad integer,
+Nacionalidad varchar(30),
+primary key(id_nacionalidad)
+);
+
+CREATE TABLE Obra(
+id_obra integer,
+Titulo varchar(30),
+Descripcion varchar(30),
+Precio double(30),
+AñoObra int(10),
+primary key(id_obra)
+);
+
+create table autor(
+id_autor integer auto_increment,
+Autor_nombre varchar(20),
+primary key(id_autor)
+);
+
+
+create table Categoria(
+id_categoria integer,
+Categoria varchar(30),
+primary key(id_categoria)
+);
+
+create table Estado_Cliente(
+id_estado integer,
+estado boolean,
+primary key(id_estado)
+);
+
+create table Proveedor(
+id_proveedor integer,
+Nombre_Proveedor varchar(30),
+Direccion_proveedor varchar(30),
+Telefono_proveedor integer(30),
+primary key(id_proveedor)
+);
+
+
+create table Exposicion(
+id_exposicion integer,
+Titulo_Exposicion varchar(30),
+Fechar_apertura date,
+Fecha_cierre date,
+primary key(id_exposicion)
+);
+
+
+create table 
+
+
+create view cuenta_habiente as select impositor.nombre_cliente as cliente, numero_cuenta as cuenta from cliente, impositor where cliente.nombre_cliente = impositor.nombre_cliente;
+
+update cuenta set nombre_sucursal = 'Tarija' where numero_cuenta = 'C-401';
+
+ 
+create tables Obra(
+id_obra integer,
+Titulo varchar(30),
+Descripcion varchar(30),
+Precio double(10),
+Anio_de_la_obra integer(10),
+primary key (id_obra)
+);
+
+
+create table autor(
+id_autor integer auto_increment,
+Autor_nombre varchar(20),
+primary key(id_autor)
+);
+
+
+create table Categoria(
+id_categoria integer,
+Categoria varchar(30),
+primary key(id_categoria)
+);
+
+create table Estado_Cliente(
+id_estado integer,
+estado boolean,
+primary key(id_estado)
+);
+
+create table Proveedor(
+id_proveedor integer,
+Nombre_Proveedor varchar(30),
+Direccion_proveedor varchar(30),
+Telefono_proveedor integer(30),
+primary key(id_proveedor)
+);
+
+
+create table Exposicion(
+id_exposicion integer,
+Titulo_Exposicion varchar(30),
+Fechar_apertura date,
+Fecha_cierre date,
+primary key(id_exposicion)
+);
+
+('987-65-4321','Michael Brown', '123 4567', '1', 'michael@yahoo.com')
+
+insert into cliente values ('654321098765','Felix Hoffmann', '17198765432','0','Felix@gmail.com'),('987-65-4321','Michael Brown', '1234567', '1', 'michael@yahoo.com'), ('234-56-7890','Emma Lee', '3456789', '0', 'emma@hotmail.com');
+
+insert into cliente values ('23456789','David Williams', '98765421','1','david@gmail.com'),('UVWX789012SDGYK05','Sophia Jones', '18124681357', '0', 'sophia@hotmail.com'), ('345-67-8901','Daniel Davis', '2345678', '1', 'daniel@gmail.com'), ('8456789','Olivia Garcia', '16313579246', '0', 'olivia@hotmail.com'), ('254-66-7800','James Miller', '8765432', '1', 'james@gmail.com'),('ABCD123456HCMRCF01','Isabella Martinez', '122286427913', '0', 'isabella@outlook.com'), ('5678-9012-3456','Masanori Kudaka', '9012345678', '1', 'masanorias@yahoo.com'), ('87654321','Pedro Paniagua', '912345678', '0', 'pedritoll@gmail.com')
+
+
+Hay que crearse un usuario aparte del usuario root
+
+el volcado se hace desde afuera
+
+
+insert into proveedor values(1,'Museo_Bellas_Artes','123 Main St','5551234567'),(2,'Casa_de_la_Cultura','876 Walnut Ct','5558765432'),(3,'Casa_de_la_Fotografia','98A ThompSquare','9008000100');
+insert into proveedor values(1,'Museo_Bellas_Artes','123 Main St','5551234567'),(2,'Casa_de_la_Cultura','876 Walnut Ct','5558765432'),(3,'Casa_de_la_Fotografia','9008000100');
+
+INSERT INTO proveedor VALUES
+    (1, 'Museo_Bellas_Artes', '123 Main St', '5551234567'),
+    (2, 'Casa_de_la_Cultura', '876 Walnut Ct', '5558765432'),
+    (3, 'Casa_de_la_Fotografia', '98A ThompSquare', '9008000100');
+
+
+
+INSERT INTO nacionalidad VALUES
+	(1, 'Alemana'),
+	(2, 'Norteamericana'),
+	(3, 'Peruana'),
+	(4, 'Mexicana'),
+	(5, 'Japonésa');
+
+
+
+CREATE TABLE Obra(
+id_obra integer,
+Titulo varchar(30),
+Descripcion varchar(30),
+Precio double(30),
+AñoObra int(10),
+primary key(id_obra)
+);
+
+
+
+insert into obra values (1,'Guernica','Poderosa pintura anti-guerra','5,000','1937'),(2,'Les Demoiselles d’Avignon','','',''),(1,'','','',''),(1,'','','',''),(1,'','','',''),(1,'','','',''),(1,'','','',''),(1,'','','',''),(1,'','','',''),(1,'','','',''),(1,'','','',''),(1,'','','',''),(1,'','','',''),(1,'','','','');
+
+
+<a - anchore hace la referencia
+
+
+hay una opcion para mostrar o no los errores
