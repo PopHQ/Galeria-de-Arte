@@ -163,3 +163,73 @@ insert into obra values (1,'Guernica','Poderosa pintura anti-guerra','5,000','19
 
 
 hay una opcion para mostrar o no los errores
+
+
+
+
+Ejemplo de Gael
+select j.Titulo, j.Size, j.Precio, j.Fecha_Lanzamiento as FechaLanzamiento, 
+dev.Nombre_Dev as Developer, publ.Nombre_publ as Publisher 
+from juego j 
+join juego_dev_publ jdp on j.ID_Juego = jdp.ID_Juego 
+join developer dev on dev.Codigo_Dev = jdp.Codigo_Dev 
+join publisher publ on jdp.Codigo_Publ = publ.Codigo_Publ 
+where Titulo like '%';
+
+select a.Autor_nombre as Autor,
+Categoria.categoria as categoria,
+from autor a
+join AutorCategoria ac on a.id_autor = a.id_autor
+join categoria cat on cat.id_categoria = ac.id_autor;
+
+Tablas relaciones
+CREATE TABLE AutorCategoria (
+    id_autor int,
+    id_categoria int,
+    PRIMARY KEY (id_autor, id_categoria),
+    FOREIGN KEY (id_autor) REFERENCES autor(id_autor),
+    FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria)
+);
+CREATE TABLE ObraProveedor (
+    id_proveedor int,
+    id_obra int,
+    PRIMARY KEY (id_proveedor, id_obra),
+    FOREIGN KEY (id_proveedor) REFERENCES Proveedor(id_proveedor),
+    FOREIGN KEY (id_obra) REFERENCES Obra(id_obra)
+);
+
+INSERT INTO ObraProveedor (id_autor, id_categoria) VALUES (1, 1),(2,1),(3,1),(4,2),(5,2),(6,3),(7,3);
+
+insert into obra values ('0','Guernica','Poderosa pintura anti-guerra','5,000','1937');
+
+insert into obra values ('0','Les Demoiselles d’Avignon',' Representa a cinco mujeres desnudas en un estilo geométrico y revolucionario','30000','1907');
+insert into obra values ('0','The Old Guitarist','Combina pintura y collage, incorporando una silla de rejilla.','100000','1904');
+insert into obra values ('0','The Persistence of Memory','Relojes derretidos','8000','1937');
+insert into obra values ('0','Metamorphosis of Narcissus','Muestra la transformación del narciso en una flor y su reflejo en el agua. Es una obra llena de simbolismo y misterio.','15000','1919');
+insert into obra values ('0','Black Iris','Primer plano de una flor de iris.','5000','1926');
+insert into obra values ('0','Conejo','Una escultura de acero inoxidable que representa un conejo inflable.','10000','2019');
+insert into obra values ('0','Balloon Dog','Una serie de esculturas de acero inoxidable que representan perros hechos con globos.','0','1994');
+insert into obra values ('0','Balloon Dog','Una serie de esculturas de acero inoxidable que representan perros hechos con globos.','0','1994');
+inseRT INTO obra VALUES ('0','Sphere Within Sphere', 'Una serie de esculturas de esferas metálicas huecas con capas internas complejas.', NULL, 1907);
+INSERT INTO obra (Titulo, Descripcion, Precio, AñoObra) VALUES ('Migrant Mother', 'Captura a Florence Owens Thompson y sus hijos, simbolizando las dificultades de la era de la Gran Depresión', NULL, 1936);
+INSERT INTO obra (Titulo, Descripcion, Precio, AñoObra) VALUES ('The Afghan Girl', 'Un retrato de Sharbat Gula, una niña afgana en un campo de refugiados, famoso por sus penetrantes ojos verdes', 8000, 1984);
+INSERT INTO obra (Titulo, Descripcion, Precio, AñoObra) VALUES ('Ram\'s Head White Hollyhock and Little Hills', 'Esta obra captura la esencia del paisaje de Nuevo México, combinando elementos del desierto con una sensibilidad hacia la forma y el color', 2000, 1935);
+INSERT INTO obra (Titulo, Descripcion, Precio, AñoObra) VALUES ('Toward Los Angeles, California', 'Una imagen que muestra a un hombre caminando por la carretera con un letrero que dice "Hacia Los Ángeles", reflejando el movimiento de personas buscando trabajo y una vida mejor.', 7100, 1937);
+
+
+
+CREATE TABLE clientenacestado (
+    CI_Cliente int,
+    id_nacionalidad int,
+    PRIMARY KEY (CI_Cliente, id_nacionalidad),
+    FOREIGN KEY (CI_Cliente) REFERENCES Cliente(CI_Cliente),
+    FOREIGN KEY (id_nacionalidad) REFERENCES Nacionalidad(id_nacionalidad)
+);
+
+ALTER TABLE Cliente
+DROP PRIMARY KEY,
+ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY;
+
+
+
+
